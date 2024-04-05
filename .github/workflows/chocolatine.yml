@@ -9,9 +9,6 @@ on:
     branches-ignore:
       - "ga-ignore-*"
 
-env:
-  MIRROR_URL: git@github.com:EpitechPromo2028/B-DOP-200-PAR-2-1-chocolatine-theo.couto-christofidis.git
-
 jobs:
   check_coding_style:
     name: Checking the coding style
