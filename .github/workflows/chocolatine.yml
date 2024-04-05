@@ -20,7 +20,7 @@ jobs:
     container: ghcr.io/epitech/coding-style-checker:latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           repository: ''
 
@@ -44,7 +44,7 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           repository: ''
 
@@ -72,7 +72,7 @@ jobs:
     steps:
 
       - name: Checkout repository
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
         with:
           repository: ''
 
