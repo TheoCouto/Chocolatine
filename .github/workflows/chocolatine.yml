@@ -14,19 +14,10 @@ env:
   EXECUTABLES: "chocolatine"
 
 jobs:
-  check_if_mirror:
-    name: Checks if the repository is the mirror
-    runs-on: ubuntu-latest
-    steps:
-      - if: ${{ github.repository == 'https://github.com/EpitechPromo2028/B-DOP-200-PAR-2-1-chocolatine-theo.couto-christofidis.git' }}
-        run: |
-          exit 1
-
   check_coding_style:
     name: Checking the coding style
     runs-on: ubuntu-latest
     container: ghcr.io/epitech/coding-style-checker:latest
-    needs: [check_if_mirror]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -92,7 +83,7 @@ jobs:
     name: Pushing to the mirror repository
     runs-on: ubuntu-latest
     needs:  [run_tests]
-    if: github.event_name == 'push'
+    if: ${{ github.event_name == 'push' && github.repository != env.MIRROR_URL }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
