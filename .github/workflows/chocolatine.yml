@@ -18,7 +18,7 @@ jobs:
     name: Checks if the repository is the mirror
     runs-on: ubuntu-latest
     steps:
-      - if: ${{ github.repository == env.MIRROR_URL }}
+      - if: ${{ github.repository == 'https://github.com/EpitechPromo2028/B-DOP-200-PAR-2-1-chocolatine-theo.couto-christofidis.git' }}
         run: |
           exit 1
 
