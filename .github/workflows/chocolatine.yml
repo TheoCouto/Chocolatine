@@ -85,7 +85,7 @@ jobs:
     needs:  [run_tests]
     if: github.event_name == 'push'
     steps:
-      - if: ${{ github.repository == env.MIRROR_URL }}
+      - if: ${{ github.repository == 'EpitechPromo2028/B-DOP-200-PAR-2-1-chocolatine-theo.couto-christofidis' }}
         run: |
           exit 1
       - name: Checkout repository
